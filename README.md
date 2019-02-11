@@ -1,10 +1,11 @@
 # MQTT - BASIC
 A Basic example of MQTT broker and websocket client using nodejs.
 
-Server Libraries 
+**Server Libraries**
 - [Mosca](https://github.com/mcollina/mosca)
 - Express
-Client Libraries
+
+**Client Libraries**
 - [MQTT-JS](https://github.com/mqttjs): [Embbebed in MOSCA](https://github.com/mcollina/mosca/wiki/MQTT-over-Websockets)
 
 
