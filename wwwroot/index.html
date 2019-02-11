@@ -1,0 +1,31 @@
+<html>
+
+<head>
+    <title>MQTT Basic Test</title>
+    <script
+    src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha256-3edrmyuQ0w65f8gfBsqowzjJe2iM6n0nKciPUp8y+7E="
+    crossorigin="anonymous"></script>
+    <script src="/mqtt.js"></script>
+</head>
+
+<body>
+    <h1>MQTT Basic Test</h1>
+    <button onclick="client.publish('mqtt/demo','Hello Again');">Publish</button>
+    
+    <div id="messages"></div>
+    <script>
+        var client = mqtt.connect('ws://localhost:3001/');
+
+        client.subscribe("mqtt/demo");
+
+        client.on("message", function (topic, payload) {
+            $('#messages').append('<span>Topic: ' + topic + '  | ' + payload+ '</span><br/>');
+        });
+
+        client.publish("mqtt/demo", "hello world!");
+
+    </script>
+</body>
+
+</html>
